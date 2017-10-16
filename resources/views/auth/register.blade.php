@@ -34,6 +34,20 @@
                 </div>
             </div>
 
+            <div class="form-group{{ $errors->has('username') ? 'has-danger' : '' }}">
+                <label for="username" class="col-md-4 form-control-label">Username</label>
+
+                <div class="col-md-6">
+                    <input id="username" type="text" class="form-control" name="username" value="{{old('username')}}" required>
+
+                     @if ($errors->has('username'))
+                     <span clss="form-control-feedback">
+                        <strong>{{ $errors->first('username')}}</strong>
+                    </span>
+                    @endif
+                </div>                
+            </div>
+
             <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                 <label for="password" class="col-md-4 form-control-label">Password</label>
 

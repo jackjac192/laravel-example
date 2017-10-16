@@ -17,10 +17,12 @@ $factory->define(App\User::class, function (Faker $faker) {
     static $password;
 
     return [
-        'name' => $faker->name,
+        'name' => $faker->name,        
         'email' => $faker->unique()->safeEmail,
+        'username' => $faker->userName,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+        'avatar' => $faker->imageUrl(300,300, 'people')
     ];
 });
 
