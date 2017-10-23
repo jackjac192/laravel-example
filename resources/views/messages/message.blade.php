@@ -11,3 +11,6 @@
 		Leer más
 	</a>
 </p>  
+<div class="card-text text-muted float-left">
+	{{ $message->created_at }}
+</div>
